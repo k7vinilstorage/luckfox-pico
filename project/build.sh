@@ -1747,7 +1747,7 @@ function parse_partition_file() {
 	echo "mkdir -p /dev/block/by-name" >>$RK_PROJECT_FILE_ROOTFS_SCRIPT
 	echo "cd /dev/block/by-name" >>$RK_PROJECT_FILE_ROOTFS_SCRIPT
 
-	SYS_BOOTARGS="sys_bootargs="
+	SYS_BOOTARGS="sys_bootargs= video=vfb"
 	IFS=,
 	for part in $GLOBAL_PARTITIONS; do
 		part_size=$(echo $part | cut -d '@' -f1)
